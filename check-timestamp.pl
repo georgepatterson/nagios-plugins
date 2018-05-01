@@ -118,9 +118,9 @@ if ($mtime) {
 	my ($res, $ts_diff, $ts_exp) = check_timestamp($st->mtime, $warn_age, $crit_age) if $mtime;
 	if ($res ne "OK") {
 		update_result($res);
-		push(@output, "$file: mtime is too ".($ts_diff > $ts_exp ? "old" : "new").": $ts_diff (treshold: $ts_exp)");
+		push(@output, "$file: mtime is too ".($ts_diff > $ts_exp ? "old" : "new").": $ts_diff (threshold: $ts_exp)");
 	} else {
-		push(@output, "$file: mtime is OK: $ts_diff (treshold $ts_exp)");
+		push(@output, "$file: mtime is OK: $ts_diff (threshold $ts_exp)");
 	}
 }
 
@@ -128,9 +128,9 @@ if ($ctime) {
 	my ($res, $ts_diff, $ts_exp) = check_timestamp($st->ctime, $warn_age, $crit_age) if $ctime;
 	if ($res ne "OK") {
 		update_result($res);
-		push(@output, "$file: ctime is too ".($ts_diff > $ts_exp ? "old" : "new").": $ts_diff (treshold: $ts_exp)");
+		push(@output, "$file: ctime is too ".($ts_diff > $ts_exp ? "old" : "new").": $ts_diff (threshold: $ts_exp)");
 	} else {
-		push(@output, "$file: ctime is OK: $ts_diff (treshold $ts_exp)");
+		push(@output, "$file: ctime is OK: $ts_diff (threshold $ts_exp)");
 	}
 }
 
